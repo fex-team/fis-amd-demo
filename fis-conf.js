@@ -6,7 +6,10 @@ fis.config.set('settings.postpackager.autoload.type', 'requirejs');
 fis.config.set('modules.postprocessor.html', 'amd');
 fis.config.set('modules.postprocessor.js', 'amd');
 fis.config.set('settings.postprocessor.amd', {
-    baseUrl: './modules',
+    baseUrl: '.',
+    paths: {
+        app: './modules/app'
+    },
     packages: [
 
         // zrender 模块下的
@@ -24,4 +27,14 @@ fis.config.set('settings.postprocessor.amd', {
             main: 'echarts'
         }
     ]
+});
+
+// 使用 depscombine 是因为，在配置 pack 的时候，命中的文件其依赖也会打包进来。
+fis.config.set('modules.packager', 'depscombine');
+
+fis.config.set('pack', {
+    // js
+    // 依赖也会自动打包进来, 且可以通过控制前后顺来来定制打包，后面的匹配结果如果已经在前面匹配过，将自动忽略。
+    'pkg/zrender.js': ['modules/libs/zrender/zrender.js'],
+    'pkg/echarts.js': ['modules/libs/echarts/echarts.js']
 });
