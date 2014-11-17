@@ -29,3 +29,7 @@ npm install fis-postpackager-autoload -g
 // 由于 fis 中生成的 module id 格式为 xxx:path 这种格式，被认为是 url 导致 require.js 会发请求
 require.jsExtRegExp = /^\/|:\/\/|\?|\.js$/;
 ```
+
+## amd plugin 不支持 --md5
+
+现在还没有想到 amd plugin 的使用场景，fis 编译期，只会处理 amd 本身资源依赖问题，不会处理插件中资源依赖问题，所以这个栗子在用 [css amd plugin](https://github.com/guybedford/require-css) 去加载本项目样式，且开启了 `--md5` 选项的时候会找不到样式文件。
