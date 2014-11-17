@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-    <title>Zrender demo</title>
+    <title>Amd plugin demo</title>
+    <link rel="stylesheet" type="text/css" href="/modules/libs/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/modules/libs/bootstrap/css/bootstrap-theme.css">
     <!--STYLE_PLACEHOLDER-->
 </head>
 <body>
@@ -16,15 +18,18 @@
     <li><a href="/shim.html">Shim</a></li>
 </ul>
 
-<div id="main" style="height:400px"></div>
+<div id="main" style="margin-top: 50px;">
+    <button id="button" class="btn btn-primary">BootStrap 按钮</button>
+</div>
 
 <script type="text/javascript" src="lib/require.js"></script>
 <!--SCRIPT_PLACEHOLDER-->
 <!--RESOURCEMAP_PLACEHOLDER-->
 <script type="text/javascript">
-    /* 简单的加上 `fis async` 注释就可以了, 表示以下的 require 不是同步加载，而是异步加载，默认所有的 require 入口都是同步，所以这里要加个注释，才能走按异步方式加载。 */
-    require(['app/zrender'], function (app) {
-        app();
+    require(['jquery', 'bootstrap'], function ($) {
+        $('#button').click(function() {
+            alert('click');
+        });
     });
 </script>
 
