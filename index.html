@@ -3,7 +3,17 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <title>Amd plugin demo</title>
-    <link rel="stylesheet" type="text/css" href="/modules/libs/jquery-ui/themes/base/all.css">
+    <!--
+        @require "/modules/libs/jquery-ui/themes/base/core.css"
+        @require "/modules/libs/jquery-ui/themes/base/tabs.css"
+        @require "/modules/libs/jquery-ui/themes/base/datepicker.css"
+        @require "/modules/libs/jquery-ui/themes/base/theme.css"
+    -->
+    <style type="text/css">
+        .invisible {
+            display: none;
+        }
+    </style>
     <!--STYLE_PLACEHOLDER-->
 </head>
 <body>
@@ -33,15 +43,14 @@
 <!--RESOURCEMAP_PLACEHOLDER-->
 <script type="text/javascript">
     require(['jquery', 'jqueryui/tabs'], function ($) {
-        //Make the tabs.
+        // 创建 tabs
         $('#tabs')
             .tabs({
                 load: function (event, ui) {
-                    //If the second tab is clicked, dynamically load
-                    //the datepicker.
+                    // 当第二个 tab 加载完成后，动态初始化日历控件
                     if (ui.tab.index() === 1) {
-                        //Load the datepicker in French, on demand.
-                        // fis async
+
+                        // 通过注释关键字显式的指定异步加载 `fis async`
                         require(['jqueryui/datepicker', 'jqueryui/i18n/datepicker-zh-CN'],
                             function () {
                                 $('#datepicker').datepicker();
@@ -50,7 +59,7 @@
                     }
                 }
             })
-            //Make the tabs visible now that the widget has been instantiated.
+            // Make the tabs visible now that the widget has been instantiated.
             .removeClass('invisible');
     });
 </script>

@@ -48,10 +48,20 @@ fis.config.set('settings.postprocessor.amd', {
 fis.config.set('modules.packager', 'depscombine');
 
 fis.config.set('pack', {
+    'pkg/css/jqueyr-ui.css': [
+        '/modules/libs/jquery-ui/themes/base/core.css',
+        '/modules/libs/jquery-ui/themes/base/tabs.css',
+        '/modules/libs/jquery-ui/themes/base/datepicker.css',
+        '/modules/libs/jquery-ui/themes/base/theme.css'
+    ],
+
     // js
     // 依赖也会自动打包进来, 且可以通过控制前后顺来来定制打包，后面的匹配结果如果已经在前面匹配过，将自动忽略。
     'pkg/zrender.js': ['modules/libs/zrender/zrender.js'],
-    'pkg/echarts.js': ['modules/libs/echarts/echarts.js']
+    'pkg/echarts.js': ['modules/libs/echarts/echarts.js'],
+
+    'pkg/bootstrap_jquery.js': ['modules/libs/bootstrap/js/bootstrap.js'],
+    'pkg/jquery_ui_tabs.js': ['modules/libs/jquery-ui/ui/tabs.js']
 });
 
 fis.config.set('roadmap.path', [
@@ -59,7 +69,7 @@ fis.config.set('roadmap.path', [
     {
         reg: /\/_[^\/]*?$/i,
         release: false
-    }
+    },
 
     // 标记 isMod 为 true, 这样，在 modules 里面的满足 commonjs 规范的 js 会自动包装成 amd js, 以至于能在浏览器中运行。
     //
