@@ -14,6 +14,7 @@ fis.config.set('settings.postprocessor.amd', {
     paths: {
         jquery: 'modules/libs/jquery/jquery.js',
         bootstrap: 'modules/libs/bootstrap/js/bootstrap.js',
+        jqueryui: 'modules/libs/jquery-ui/ui/',
         app: './modules/app',
         css: './modules/css.js'
     },
@@ -54,6 +55,11 @@ fis.config.set('pack', {
 });
 
 fis.config.set('roadmap.path', [
+
+    {
+        reg: /\/_[^\/]*?$/i,
+        release: false
+    }
 
     // 标记 isMod 为 true, 这样，在 modules 里面的满足 commonjs 规范的 js 会自动包装成 amd js, 以至于能在浏览器中运行。
     //
