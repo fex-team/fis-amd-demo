@@ -10,6 +10,7 @@ Fis amd demo
 ```
 npm install fis-postprocessor-amd -g
 npm install fis-postpackager-autoload -g
+npm install fis-packager-depscombine -g
 ```
 
 ## 兼容性问题
