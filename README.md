@@ -28,7 +28,7 @@ lights install fis-amd-demo
 进入 fis-amd-demo 目录 编译 & 运行
 
 ```
-// 开起打包
+// 开起打包编译
 fis release -p
 fis server start
 ```
@@ -50,7 +50,3 @@ fis server start
 // 由于 fis 中生成的 module id 格式为 xxx:path 这种格式，被认为是 url 导致 require.js 会发请求
 require.jsExtRegExp = /^\/|:\/\/|\?|\.js$/;
 ```
-
-## amd plugin 不支持 --md5
-
-现在还没想到 amd plugin 的使用场景，fis 编译期，只会处理 amd 本身资源依赖问题，不会处理插件中资源依赖问题，所以这个栗子在用 [css amd plugin](https://github.com/guybedford/require-css) 去加载本项目样式，且开启了 `--md5` 选项的时候会找不到样式文件。
