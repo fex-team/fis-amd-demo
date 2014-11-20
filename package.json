@@ -1,0 +1,27 @@
+{
+  "name": "fis-amd-test",
+  "version": "0.0.1",
+  "description": "Fis amd demo and test.",
+  "main": "fis-conf.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fex-team/fis-amd-demo.git"
+  },
+  "keywords": [
+    "fisp",
+    "amd",
+    "mod",
+    "fis",
+    "yogurt",
+    "jello"
+  ],
+  "author": "2betop",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/fex-team/fis-amd-demo/issues"
+  },
+  "homepage": "https://github.com/fex-team/fis-amd-demo"
+}
