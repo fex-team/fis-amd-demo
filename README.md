@@ -17,7 +17,7 @@ npm install fis-postpackager-autoload -g
 npm install fis-packager-depscombine -g
 ```
 
-下载次 demo
+下载此 demo
 
 ```
 npm install lights -g
