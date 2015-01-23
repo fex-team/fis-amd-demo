@@ -1,7 +1,7 @@
 Fis amd demo
 ================================
 
-这是纯前端的 amd demo，[fisp 的版本](https://github.com/fex-team/fisp-amd-demo)，[jello 的版本](https://github.com/fex-team/jello-amd-demo)。
+这是纯前端的 amd demo，[fisp 的版本](https://github.com/fex-team/fisp-amd-demo)，[jello 的版本](https://github.com/2betop/jello-amd-demo)。
 
 ## 安装使用
 
