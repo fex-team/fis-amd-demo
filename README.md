@@ -6,7 +6,7 @@ Fis amd demo
 ## 安装使用
 
 ```
-npm intall -g fis
+npm install -g fis
 ```
 
 此 demo 中使用了三插件，注意安装。
